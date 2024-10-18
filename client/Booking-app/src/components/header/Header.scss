@@ -1,0 +1,214 @@
+.header {
+    background-color: #3c096c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+  
+    .headerContainer {
+      width: 100%;
+      max-width: 1024px;
+      margin: 20px 0 100px 0;
+    }
+  
+    .headerContainer.listMode {
+      margin: 20px 0 0 0;
+    }
+  
+    .headerList {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+  
+    .headerLiseItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  
+      &.active {
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 20px;
+      }
+    }
+  }
+  
+  .headerDesc {
+    margin: 20px 0;
+  }
+  
+  .headerBtn {
+    background-color: #9d4edd;
+    color: white;
+    padding: 9px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .headerSearch {
+    height: auto;
+    background-color: white;
+    border: 3px solid yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    max-width: 1024px;
+  }
+  
+  .headerIcon {
+    color: lightgray;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  .headerSearchItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Keep default settings for normal viewports */
+  }
+  
+  .headerSearchInput {
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  
+  .headerSearchText {
+    color: #a770f5;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  .date {
+    position: absolute;
+    top: 51px;
+    z-index: 2;
+  }
+  
+  .options {
+    position: absolute;
+    top: 70px;
+    background-color: white;
+    color: gray !important;
+    border-radius: 5px;
+    box-shadow: #c77dff 0px 0px 10.6px 1px;
+    z-index: 2;
+  }
+  
+  .optionItem {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  
+  .optionCounter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .optionCounterButton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #9d4edd;
+    color: #9d4edd;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .optionCounterButton:disabled {
+    cursor: not-allowed;
+  }
+  
+  /* Media Query for Mobile Devices */
+  @media (max-width: 768px) {
+    .header {
+      padding: 15px;
+    }
+  
+    .headerContainer {
+      margin: 10px 0 50px 0;
+    }
+  
+    .headerList {
+      gap: 20px;
+      flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+      justify-content: center; /* Center items on mobile */
+    }
+  
+    .headerLiseItem {
+      gap: 5px;
+  
+      &.active {
+        padding: 8px;
+        border-radius: 15px;
+      }
+    }
+  
+    .headerTitle {
+      font-size: 18px;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .date {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 2;
+      }
+      
+  
+    .headerDesc {
+      font-size: 14px;
+      text-align: center;
+      margin: 10px 0;
+    }
+  
+    .headerBtn {
+      width: 100%;
+      padding: 10px 0;
+      margin-bottom: 10px; /* Add margin for spacing on mobile */
+    }
+  
+    .headerSearch {
+      flex-direction: column;
+      position: static; /* Remove absolute positioning for stacking on mobile */
+      padding: 10px;
+      gap: 15px; /* Add spacing between items */
+      margin-top: 10px; /* Space above search bar */
+    }
+  
+    .headerSearchItem {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 10px; /* Add margin between search items for better spacing on mobile */
+    }
+  
+    .headerSearchText,
+    .headerSearchInput {
+      font-size: 14px;
+    }
+  
+    .options {
+      top: 650px; /* Adjust positioning for mobile */
+      left: 0;
+      width: 100%; /* Make options container full width */
+    }
+  
+    .optionItem {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  

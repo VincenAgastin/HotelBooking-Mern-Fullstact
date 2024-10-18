@@ -1,0 +1,80 @@
+.mail {
+    width: 100%;
+    margin-top: 50px;
+    background-color: #3c096c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    text-align: center; /* Center text on mobile */
+  }
+  
+  .mailTitle {
+    font-size: 24px; /* Adjusted for mobile readability */
+  }
+  
+  .mailDesc {
+    font-size: 16px; /* Adjusted for mobile readability */
+  }
+  
+  .mailInputContainer {
+    display: flex;
+    flex-direction: row; /* Default layout for larger screens */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mailInputContainer > input {
+    padding: 19px;
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px 0 10px 0;
+    margin-right: 10px;
+  }
+  
+  .mailInputContainer > button {
+    height: 40px;
+    background-color: #9d4edd;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    padding: 0 17px;
+    cursor: pointer;
+  }
+  
+  /* Media Query for Mobile Devices */
+  @media (max-width: 768px) {
+    .mail {
+      padding: 20px; /* Reduce padding on mobile */
+    }
+  
+    .mailTitle {
+      font-size: 20px; /* Adjust font size for better fit on mobile */
+    }
+  
+    .mailDesc {
+      font-size: 14px; /* Adjust font size for better fit on mobile */
+    }
+  
+    .mailInputContainer {
+      flex-direction: column; /* Stack input and button vertically on mobile */
+      gap: 10px; /* Adjust gap for mobile view */
+    }
+  
+    .mailInputContainer > input {
+      width: 100%; /* Full width input on mobile */
+      height: 40px; /* Adjust height for better fit on mobile */
+      border-radius: 10px; /* Make input fully rounded on mobile */
+      margin-right: 0; /* Remove margin on mobile */
+    }
+  
+    .mailInputContainer > button {
+      width: 100%; /* Full width button on mobile */
+    }
+  }
+  

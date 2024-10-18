@@ -1,0 +1,29 @@
+.homeContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add spacing between sections */
+  }
+  
+  .homeTitle {
+    font-size: 24px;
+    margin: 20px 0;
+    text-align: center; /* Center-align titles on mobile */
+  }
+  
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .homeContainer {
+      padding: 10px; /* Reduce padding for mobile */
+      gap: 15px; /* Reduce gap between sections for better fit */
+    }
+  
+    .homeTitle {
+      font-size: 20px; /* Reduce font size for better readability */
+      margin: 15px 0; /* Adjust margins */
+    }
+  }
+  

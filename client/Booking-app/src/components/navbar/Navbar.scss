@@ -1,0 +1,62 @@
+$color: #3c096c;
+
+.navbar {
+  height: 50px;
+  background-color: $color;
+  display: flex;
+  justify-content: center;
+
+  .navContainer {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-weight: 500;
+    font-size: 22px;
+  }
+
+  .navButton {
+    margin-left: 20px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: $color;
+    font-weight: 500;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto; /* Adjust height for better spacing */
+    padding: 10px 0; /* Add padding to top and bottom for better spacing */
+  }
+
+  .navContainer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    padding: 0 20px; /* Add horizontal padding */
+  }
+
+  .logo {
+    font-size: 18px; /* Reduce font size for mobile */
+    margin-bottom: 10px; /* Add margin to separate from buttons */
+  }
+
+  .navItems {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+  }
+
+  .navButton {
+    width: 100%; /* Full-width buttons for easier tapping */
+    padding: 8px 0; /* Increase padding for better touch targets */
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+}

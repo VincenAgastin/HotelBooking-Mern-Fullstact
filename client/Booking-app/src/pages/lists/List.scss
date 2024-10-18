@@ -1,0 +1,192 @@
+
+.listContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.listWrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+}
+
+.listSearch{
+    flex: 1;
+    background-color: #5a189a;
+    padding: 10px;
+    border-radius: 10px;
+    position:sticky;
+    top: 10px;
+    height: max-content;
+}
+
+.listResult{
+    flex: 3;
+}
+
+.lsTitle{
+    font-style: 20px;
+    color: #caff8a;
+    margin-bottom: 10px;
+}
+
+.isItem{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+
+}
+
+.isItem>laber{
+    font-size: 12px;
+}
+
+.isItem>input{
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px 0px 10px 0px;
+}
+
+.isItem>span{
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+}
+
+.isOptionInput{
+    border: none;
+    outline: none;
+    font-weight: bold;
+    width: 60px;
+}
+
+.lsOptions{
+    padding: 10px;
+}
+
+
+.isOptionItem{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: beige;
+    font-size: 12px;
+}
+
+.listSearchBtn{
+    padding: 10px;
+    background-color: #b799ff;
+    color: black;
+    width: 100%;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .listContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 0 10px; // Add padding for better alignment on small screens
+      }
+      
+      .listWrapper {
+        width: 100%;
+        max-width: 1024px;
+        display: flex;
+        flex-direction: column; // Stack search and result vertically on smaller screens
+        gap: 15px; // Reduced gap for a more compact layout
+      }
+      
+      .listSearch {
+        background-color: #5a189a;
+        padding: 10px; // Reduced padding for a smaller layout
+        border-radius: 8px; // Slightly smaller border-radius for a compact look
+        position: sticky;
+        top: 10px;
+        width: 100%; // Full width for mobile screens
+      }
+      
+      .listResult {
+        width: 100%; // Full width for mobile screens
+      }
+      
+      .lsTitle {
+        font-size: 16px; // Smaller font size for mobile
+        color: #caff8a;
+        margin-bottom: 10px;
+      }
+      
+      .isItem {
+        display: flex;
+        flex-direction: column;
+        gap: 4px; // Reduced gap for a more compact layout
+        margin-bottom: 10px;
+      }
+      
+      .isItem > label {
+        font-size: 10px; // Smaller font size for labels on mobile
+      }
+      
+      .isItem > input {
+        height: 28px; // Reduced height for inputs
+        border: none;
+        outline: none;
+        border-radius: 8px; // Slightly smaller border-radius
+        padding: 0 8px; // Reduced padding for inputs
+      }
+      
+      .isItem > span {
+        height: 28px; // Reduced height for span elements
+        padding: 8px; // Reduced padding
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 8px; // Slightly smaller border-radius
+      }
+      
+      .isOptionInput {
+        border: none;
+        outline: none;
+        font-weight: bold;
+        width: 100%; // Full width for mobile
+        text-align: center; // Centered text for better readability
+        font-size: 12px; // Smaller font size for input
+      }
+      
+      .lsOptions {
+        padding: 10px; // Reduced padding for options
+      }
+      
+      .isOptionItem {
+        display: flex;
+        flex-direction: column; // Stack options vertically on mobile
+        gap: 8px; // Reduced gap
+        margin-bottom: 10px; // Adjusted margin
+        color: beige;
+        font-size: 10px; // Smaller font size for mobile
+      }
+      
+      .listSearchBtn {
+        padding: 8px; // Reduced padding for a smaller button
+        background-color: #b799ff;
+        color: black;
+        width: 100%;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 12px; // Smaller font size for button text
+      }
+  }
+  
