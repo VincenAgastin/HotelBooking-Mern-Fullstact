@@ -6,13 +6,17 @@ import Header from '../../components/header/Header';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import MailList from '../../components/mailList/MailList';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import { SearchContext } from '../../components/context/SearchContext';
+import { AuthContext } from '../../components/context/AuthContext';
+import Reserve from '../../components/reserve/Reserve';
 
 const Hotel = () => {
     const [slideNumber, setSlideNumber] = useState(0);
     const [open, setOpen] = useState(false);
+
+    const [openModel,setOpenModel]=useState(false)
     
     const handleImg = (i) => {
         setSlideNumber(i);
@@ -28,6 +32,18 @@ const Hotel = () => {
         }
         setSlideNumber(newSlideNumber);
     };
+
+    const navigate=useNavigate()
+
+    const {user} =useContext(AuthContext)
+
+    const handleClick=()=>{
+        if(user){
+            setOpenModel(true)
+        }else{
+            navigate("/login")
+        }
+    }
 
     const location = useLocation();
     const id = location.pathname.split("/")[2];
@@ -95,7 +111,7 @@ const Hotel = () => {
                                 <h1>Perfect for a {days}-night stay!</h1>
                                 <span>Located in the real heart of Krakow, this property has an excellent location score of 9.8!</span>
                                 <h2><b>${data.cheapestPrice * days}</b> ({days} nights)</h2>
-                                <button>Reserve or Book Now!</button>
+                                <button onClick={handleClick}>Reserve or Book Now!</button>
                             </div>
                         </div>
                     </div>
@@ -116,6 +132,7 @@ const Hotel = () => {
                 </div>
                 <div className="fText">Copyright © 2024 TripyBooking</div>
             </div>
+            {openModel && <Reserve setOpen={setOpenModel} hotelId={id}/>}
         </div>
     );
 }

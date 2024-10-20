@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const HotelModel = require('../models/Hotel.js');
 const { verifyAdmin } = require('../verifyToken.js');
+const RoomModel = require('../models/Room.js');
 
 
 
@@ -82,6 +83,18 @@ router.get("/", async (req, res, next) => {
             return HotelModel.countDocuments({ city: city });
         }));
         res.status(200).json(list); // Changed status to 200
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+  router.get("/room/:id", async (req, res, next) => {
+    try {
+        const hotel=await HotelModel.findById(req.params.id)
+        const list=await Promise.all(hotel.rooms.map((room)=>{
+          return RoomModel.findById(room)
+        }));
+        res.status(200).json(list)
     } catch (err) {
         res.status(500).json(err);
     }

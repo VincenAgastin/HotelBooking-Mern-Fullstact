@@ -30,9 +30,7 @@ async function getDatabase() {
   try {
     await mongoose.connect(process.env.MONGO);
     console.log('Connected to the database');
-      // Fetch hotels after a successful connection
-      // const hotelss = await HotelModel.find({ city: { $in: ["berlin", "madrid", "london"] } });
-      // console.log('Hotels:', hotelss); // Log the results
+     
   } catch (err) {
     console.error('Database Connection Error!', err);
   }

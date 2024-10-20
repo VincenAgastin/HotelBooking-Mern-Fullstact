@@ -35,6 +35,26 @@ router.post("/:hotelid",verifyAdmin,async(req,res)=>{
         res.status(500).json(err)
     }
   })
+  
+
+  // UPDATE ROOM AVAILABILITY
+router.put("/availability/:id", async (req, res) => {
+    try {
+       
+        await RoomModel.updateOne(
+            { "roomNumbers._id": req.params.id },
+            {
+                $push: {
+                    "roomNumbers.$.unavailableDates": req.body.dates
+                }
+            }
+        );
+        res.status(200).json("Room availability has been updated.");
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
   //DELETE
 

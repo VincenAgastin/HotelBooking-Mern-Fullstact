@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    
+}
+
+
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #3c096c, #8f00ff); 
+}
+
+.lContainer {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.lInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.lInput:focus {
+    border-color: #8f00ff; /* Focus border color */
+}
+
+.lButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #8f00ff; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.lButton:hover {
+    background-color: #6a00cc;
+}
+
+.lButton:disabled {
+    background-color: #b885ff;
+    cursor: not-allowed;
+}
+
+.error {
+    color: red;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .lContainer {
+        width: 90%; 
+        padding: 20px;
+    }
+
+    .lInput {
+        font-size: 14px; 
+        padding: 8px; 
+    }
+
+    .lButton {
+        font-size: 14px; 
+        padding: 8px;
+    }
+
+    .error {
+        font-size: 12px; 
+    }
+}

@@ -13,6 +13,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format} from 'date-fns'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { SearchContext } from '../context/SearchContext';
+import { AuthContext } from '../context/AuthContext';
 
 
 const Header = ({type}) => {
@@ -37,6 +38,9 @@ const Header = ({type}) => {
   const navigate=useNavigate()
 
   const { dispatch } = useContext(SearchContext); 
+
+  const {  user } = useContext(AuthContext);
+
 
 
   const handleSearch=()=>{
@@ -87,7 +91,7 @@ const Header = ({type}) => {
         <p className="headerDesc">
             Get reward for your travels -  unlock instant savings of 10% or more with a free TripyBooking Account.
         </p>
-        <button className='headerBtn'>Sign in / Register</button>
+      {!user &&  <button className='headerBtn'>Sign in / Register</button>}
         <div className="headerSearch">
         <div className="headerSearchItem">
         <RiHotelBedFill className='headerIcon' />
