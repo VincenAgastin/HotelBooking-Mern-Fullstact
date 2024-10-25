@@ -17,17 +17,18 @@ router.post("/register",async (req, res,next) => {
 
         const salt=bcrypt.genSaltSync(10);
         const hash=bcrypt.hashSync(req.body.password,salt)
+        
 
 
         const newUser=new UserModel({
-            username:req.body.username,
-            email:req.body.email,
+            ...req.body,
             password:hash
         })
 
         await newUser.save()
 
         res.status(200).send("User has been Created")
+        
     }catch(err){
         next(err)
     }
@@ -59,7 +60,7 @@ router.post("/login", async (req, res, next) => {
         // If login is successful
         res.cookie("access_token",token,{
             httpOnly:true,
-        }).status(200).send(otherDetails);
+        }).status(200).send({details:{...otherDetails},isAdmin,token});
     } catch (err) {
         next(err);
     }

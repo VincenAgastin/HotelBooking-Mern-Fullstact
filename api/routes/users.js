@@ -7,9 +7,9 @@ const jwt =require('jsonwebtoken')
 
   //check
 
-//   router.get("/checkauthentication",verifyToken,(req,res,next)=>{
-//     res.send("Hello user, you are loggedIN")
-//   })
+  router.get("/checkauthentication",verifyToken,(req,res,next)=>{
+    res.send("Hello user, you are loggedIN")
+  })
 
   
 //   router.get("/checkuser/:id",verifyUser,(req,res,next)=>{

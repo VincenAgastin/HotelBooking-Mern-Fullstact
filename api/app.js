@@ -20,7 +20,38 @@ const hotelsRouter = require('./routes/hotels.js');
 const HotelModel = require('./models/Hotel.js');
 
 // Middleware to parse incoming requests
-app.use(cors())
+
+
+
+// const allowedOrigins = [
+//     'http://localhost:5173',
+//     'http://localhost:5174', // Add any other origins you want to allow
+//     'http://your-production-url.com' // Replace with your production URL
+// ];
+
+// // CORS configuration
+// const corsOptions = {
+//     origin: (origin, callback) => {
+//         // Check if the origin is in the allowedOrigins array
+//         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//             callback(null, true); // Allow the request
+//         } else {
+//             callback(new Error('Not allowed by CORS')); 
+//         }
+//     },
+//     credentials: true, 
+// };
+
+// // Middleware to parse incoming requests
+// app.use(cors(corsOptions))         
+
+
+app.use(cors({
+    origin: true,
+     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+}));
+
 app.use(cookieparser())
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json()); // Parse JSON payloads
